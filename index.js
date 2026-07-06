@@ -1,12 +1,11 @@
 const express = require('express')
-const  { connectToMongoDb} = require('./connect')
 const app = express()
-const PORT = 8001
 const path = require('path')
 const URL = require('./models/url')
-const ejs = require('ejs')
 const urlShortner = require('./routes/url')
 const UrlStaticRoute = require('./routes/staticRouter')
+const PORT = 8001
+const  { connectToMongoDb} = require('./connect')
 
 connectToMongoDb('mongodb://localhost:27017/shortUrl').then(() => {
     console.log("connect to mongodb")
