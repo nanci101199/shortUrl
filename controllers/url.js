@@ -12,7 +12,10 @@ const data = {
     visitHistory: []
 }
     await URL.create(data)
-    return res.status(201).json({message :"Created sussceful", body:data})
+    return res.render('shortner', {
+        data
+    })
+    // return res.status(201).json({message :"Created sussceful", body:data})
 }
 
 const handleGetTheOriginalUrl =  async(req, res) => {
