@@ -6,6 +6,11 @@
     <title>URL Shortener</title>
 
     <style>
+      a{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
       body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -67,12 +72,13 @@
     </style>
   </head>
   <body>
+    <div>
     <div class="container">
       <h1>🔗 URL Shortener</h1>
       <% if (locals.data) { %>
-      <p>Url generated http://localhost:8001/api/url/<%= data.shortId %></p>
+      <p>Url generated http://localhost:8001/url/<%= data.shortId %></p>
       <% } %>
-      <form action="/api/url" method="POST">
+      <form action="/url" method="POST">
         <label>Enter your Original Url</label>
         <input
           type="url"
@@ -84,5 +90,7 @@
         <button type="submit">Generate Short URL</button>
       </form>
     </div>
+    <a href="/"> Back to Home page</a>
+  </div>
   </body>
 </html>
